@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grab Her Attention — A Man's Guide to Effortless Presence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08090a;
+    --panel:#0c0f11;
+    --panel-2:#0f1315;
+    --chartreuse:#D4FF3D;
+    --neon-blue:#2FE0FF;
+    --white:#F4F5F1;
+    --gray:#8B9199;
+    --gray-dim:#5F6469;
+    --line:rgba(244,245,241,0.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  :focus-visible{outline:2px solid var(--chartreuse); outline-offset:3px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .serif{font-family:'Lora', serif;}
+  em{font-style:italic; color:var(--chartreuse); font-family:inherit;}
+  .em-blue{font-style:italic; color:var(--neon-blue);}
+
+  .dotted{
+    background-image: radial-gradient(rgba(244,245,241,0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+  .gridded{
+    background-image:
+      linear-gradient(rgba(212,255,61,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,255,61,0.07) 1px, transparent 1px),
+      radial-gradient(rgba(244,245,241,0.07) 1px, transparent 1px);
+    background-size: 90px 90px, 90px 90px, 26px 26px;
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  /* NAV */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 6vw;
+    background:rgba(8,9,10,0.8);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav .brand{display:flex; align-items:center; gap:10px; font-size:0.82rem; letter-spacing:0.14em; font-weight:700; text-transform:uppercase;}
+  .nav .brand .diamond{color:var(--chartreuse); font-size:0.7rem;}
+  .nav .status{
+    display:flex; align-items:center; gap:8px;
+    font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);
+  }
+  .nav .status .dot{width:7px; height:7px; border-radius:50%; background:var(--neon-blue); box-shadow:0 0 8px var(--neon-blue);}
+
+  /* HERO — split: product image left, copy + price + buy right */
+  .hero-split{
+    position:relative;
+    padding:12vh 6vw;
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+    align-items:center;
+  }
+  @media (max-width:900px){
+    .hero-split{grid-template-columns:1fr; padding-top:8vh;}
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:0.78rem; letter-spacing:0.16em; color:var(--neon-blue); text-transform:uppercase; margin-bottom:22px;
+  }
+  .hero-eyebrow .rule{width:24px; height:1px; background:var(--neon-blue);}
+  .hero-title{
+    font-family:'Inter', sans-serif;
+    font-weight:900;
+    font-size:clamp(2rem, 4.4vw, 3.2rem);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:var(--white);
+  }
+  .em-blue-solid{color:var(--chartreuse);}
+  .hero-desc{
+    color:var(--gray); font-size:1rem; line-height:1.75; max-width:520px; margin-top:22px;
+  }
+  .hero-price{margin-top:30px; margin-bottom:6px;}
+
+  /* SECTION shells */
+  section{position:relative; padding:12vh 6vw;}
+  .eyebrow-label{
+    font-size:0.75rem; letter-spacing:0.2em; color:var(--gray); text-transform:uppercase; margin-bottom:22px;
+  }
+  .section-head{
+    font-family:'Lora', serif; font-weight:600;
+    font-size:clamp(2rem, 4.6vw, 3.3rem);
+    line-height:1.12;
+    max-width:820px;
+  }
+  .section-lead{
+    color:var(--gray); font-size:1.02rem; line-height:1.7; max-width:640px; margin-top:24px;
+  }
+
+  /* PARADOX */
+  .paradox p{color:var(--gray); font-size:1.05rem; line-height:1.85; max-width:720px; margin-top:26px;}
+  .paradox p strong{color:var(--white); font-weight:700;}
+  .paradox blockquote{
+    font-family:'Lora',serif; font-style:italic; font-size:1.2rem; color:var(--white);
+    border-left:2px solid var(--chartreuse); padding-left:20px; margin:34px 0; max-width:640px; line-height:1.6;
+  }
+
+  /* TOC */
+  .toc-grid{
+    display:grid; grid-template-columns:1fr 1fr; column-gap:60px;
+    margin-top:56px;
+  }
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+  .toc-item{
+    display:flex; gap:22px; align-items:baseline;
+    padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .toc-item .num{
+    font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:var(--chartreuse); min-width:40px;
+  }
+  .toc-item .ttl{font-size:1.02rem; color:var(--white);}
+
+  /* BEYOND THE READING cards */
+  .cards-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;
+    margin-top:56px;
+    background:var(--line);
+  }
+  @media (max-width:860px){ .cards-grid{grid-template-columns:1fr;} }
+  .card{
+    background:var(--panel);
+    padding:34px 30px;
+  }
+  .card .clabel{
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.14em; color:var(--neon-blue); text-transform:uppercase;
+  }
+  .card h3{font-family:'Lora',serif; font-weight:600; font-size:1.4rem; margin:14px 0 12px;}
+  .card p{color:var(--gray); font-size:0.92rem; line-height:1.65;}
+
+  /* QUOTE */
+  .quote-section{text-align:center; padding:14vh 6vw;}
+  .quote-ring{
+    width:52px; height:52px; margin:0 auto 30px;
+    border:2px solid var(--neon-blue); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 26px rgba(47,224,255,0.25);
+  }
+  .quote-ring .inner-dot{width:12px; height:12px; border-radius:50%; border:2px solid var(--neon-blue);}
+  blockquote.big-quote{
+    font-family:'Lora',serif; font-style:italic; font-size:clamp(1.15rem, 2.4vw, 1.6rem);
+    color:var(--white); max-width:760px; margin:0 auto; line-height:1.55;
+  }
+  .quote-cap{
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.06em; color:var(--gray);
+    margin-top:26px;
+  }
+
+  /* BUY BUTTON 1 — pill style */
+  .pill-btn{
+    position:relative;
+    display:inline-flex; align-items:center; gap:14px;
+    background:var(--chartreuse); color:var(--black);
+    font-family:'Inter',sans-serif; font-weight:700; font-size:1.05rem;
+    padding:20px 40px; border-radius:100px; border:none; cursor:pointer;
+    box-shadow:0 0 0 rgba(212,255,61,0.5);
+    animation: pulseChartreuse 2.6s ease-in-out infinite;
+    transition:transform 0.2s ease;
+    overflow:hidden;
+  }
+  .pill-btn:hover{transform:translateY(-3px) scale(1.02);}
+  .pill-btn .arrow{transition:transform 0.2s ease;}
+  .pill-btn:hover .arrow{transform:translateX(6px);}
+  .pill-btn::before{
+    content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation: shimmer 3.4s ease-in-out infinite;
+  }
+  @keyframes shimmer{
+    0%{ left:-60%; }
+    45%{ left:120%; }
+    100%{ left:120%; }
+  }
+  @keyframes pulseChartreuse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(212,255,61,0.45); }
+    50%{ box-shadow:0 0 34px 6px rgba(212,255,61,0.35); }
+  }
+  .buy-mid-price{
+    display:flex; align-items:baseline; gap:12px;
+  }
+  .buy-mid-price .now{font-family:'Inter',sans-serif; font-weight:900; font-size:2.2rem; color:var(--chartreuse);}
+  .buy-mid-price .was{font-size:1.1rem; color:var(--gray-dim); text-decoration:line-through;}
+
+  /* BUY BUTTON 2 — final card style, bottom */
+  .buy-bottom{
+    display:flex; justify-content:center; padding:14vh 6vw 16vh;
+  }
+  .buy-card{
+    width:100%; max-width:620px;
+    background:radial-gradient(ellipse at 50% 0%, rgba(47,224,255,0.06), transparent 60%), var(--panel-2);
+    border:1px solid var(--line); border-radius:22px;
+    padding:56px 48px;
+    text-align:center;
+  }
+  .badge{
+    display:inline-block; background:var(--neon-blue); color:var(--black);
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:0.72rem; letter-spacing:0.1em;
+    text-transform:uppercase; padding:8px 20px; border-radius:100px; margin-bottom:30px;
+  }
+  .buy-card .product-line{
+    font-family:'IBM Plex Mono',monospace; font-size:0.8rem; letter-spacing:0.22em; color:var(--gray);
+    text-transform:uppercase; margin-bottom:30px;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+  }
+  .buy-card .product-line::before, .buy-card .product-line::after{
+    content:""; width:34px; height:1px; background:var(--line);
+  }
+  .price-row{display:flex; align-items:baseline; justify-content:center; gap:16px;}
+  .price-row .was{font-size:1.3rem; color:var(--gray-dim); text-decoration:line-through;}
+  .price-row .now{
+    font-family:'Inter',sans-serif; font-weight:900; font-size:clamp(3rem,7vw,4.2rem);
+    color:var(--chartreuse); line-height:1;
+  }
+  .price-row .rupee{font-size:1.6rem; vertical-align:top;}
+  .save-line{color:var(--neon-blue); font-size:0.95rem; margin-top:16px; font-family:'IBM Plex Mono',monospace;}
+  .buy-card .full-btn{
+    position:relative; overflow:hidden;
+    width:100%; margin-top:34px; padding:20px; border:none; border-radius:100px; cursor:pointer;
+    background:var(--chartreuse); color:var(--black);
+    font-family:'Inter',sans-serif; font-weight:700; font-size:1.08rem;
+    animation: pulseChartreuse 2.6s ease-in-out infinite;
+    transition:transform 0.2s ease;
+  }
+  .buy-card .full-btn:hover{transform:translateY(-3px);}
+  .buy-card .full-btn::before{
+    content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation: shimmer 3.4s ease-in-out infinite;
+  }
+  .buy-card .microcopy{color:var(--gray); font-size:0.85rem; margin-top:20px;}
+  .buy-card .checks{
+    display:flex; gap:22px; justify-content:center; margin-top:22px; flex-wrap:wrap;
+    font-size:0.82rem; color:var(--gray);
+  }
+  .buy-card .checks span{color:var(--chartreuse); margin-right:6px;}
+
+  /* PRODUCT PREVIEW */
+  .preview-frame{
+    position:relative;
+    width:100%; max-width:440px;
+    padding:34px;
+    justify-self:center;
+  }
+  @media (max-width:900px){ .preview-frame{ max-width:400px; margin:0 auto; } }
+  .corner{
+    position:absolute; width:34px; height:34px; z-index:2;
+  }
+  .corner.tl{ top:0; left:0; border-top:3px solid var(--chartreuse); border-left:3px solid var(--chartreuse); }
+  .corner.tr{ top:0; right:0; border-top:3px solid var(--chartreuse); border-right:3px solid var(--chartreuse); }
+  .corner.bl{ bottom:0; left:0; border-bottom:3px solid var(--neon-blue); border-left:3px solid var(--neon-blue); }
+  .corner.br{ bottom:0; right:0; border-bottom:3px solid var(--neon-blue); border-right:3px solid var(--neon-blue); }
+
+  .locked-badge{
+    position:absolute; top:20px; left:52px; z-index:3;
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--neon-blue); border-radius:4px;
+    padding:9px 16px;
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.1em;
+    color:var(--neon-blue); background:rgba(8,9,10,0.85);
+    text-transform:uppercase;
+  }
+
+  .preview-card{
+    position:relative;
+    margin-top:34px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:56px 36px 76px;
+    min-height:480px;
+    background:
+      radial-gradient(ellipse 90% 60% at 30% 100%, rgba(212,255,61,0.10), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 10% 0%, rgba(47,224,255,0.08), transparent 60%),
+      var(--panel-2);
+    overflow:hidden;
+  }
+  .preview-card .p-eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem; letter-spacing:0.14em; color:var(--gray);
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .preview-card h2{
+    font-family:'Inter',sans-serif; font-weight:900; text-transform:uppercase;
+    font-size:clamp(2rem, 6vw, 2.9rem); line-height:1.05; color:var(--white);
+  }
+  .preview-card h2 .accent{ color:var(--chartreuse); display:block; }
+  .preview-card .p-rule{
+    width:100%; height:1px; background:var(--chartreuse); opacity:0.5; margin:28px 0;
+  }
+  .preview-card .p-quote{
+    font-family:'Lora',serif; font-style:italic; color:var(--gray); font-size:1.15rem; line-height:1.55;
+    max-width:420px;
+  }
+
+  footer{
+    padding:44px 6vw 56px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--line);
+    color:var(--gray); font-size:0.8rem; flex-wrap:wrap; gap:16px;
+  }
+  footer .foot-brand{font-weight:700; letter-spacing:0.06em; color:var(--white); text-transform:uppercase; font-size:0.85rem;}
+  footer .foot-note{max-width:520px; line-height:1.6;}
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="brand"><span class="diamond">◆</span> Digital Guides</div>
+    <div class="status"><span class="dot"></span>1 Guide Live</div>
+  </nav>
+
+  <section class="hero-split gridded">
+    <div class="preview-frame">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <div class="locked-badge">// Locked On</div>
+      <div class="preview-card">
+        <div class="p-eyebrow">A Man's Guide To Effortless Presence</div>
+        <h2>GRAB HER<span class="accent">ATTENTION</span></h2>
+        <div class="p-rule"></div>
+        <p class="p-quote">"Trying to get her is the exact thing that pushes her away."</p>
+      </div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="rule"></span> Guide 01 — For Men</div>
+      <h1 class="hero-title">Grab Her <span class="em-blue-solid">Attention.</span></h1>
+      <p class="hero-desc">Most guys lose her the same way: by trying too hard to keep her. This guide breaks down
+        exactly why effort reads as need, and rebuilds the internal shift that makes your attention worth
+        chasing — a standard instead of approval, presence instead of performance, and the willingness
+        to walk away.</p>
+      <div class="buy-mid-price hero-price">
+        <span class="now">₹99</span>
+        <span class="was">₹2999</span>
+      </div>
+      <button class="pill-btn">Get the guide now <span class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <section class="paradox dotted">
+    <div class="eyebrow-label mono">The Paradox</div>
+    <h2 class="section-head">The more you <em>chase</em>, the faster she pulls away.</h2>
+    <p>You text first. You reply fast. You try harder to keep her interested — and somehow, she gets
+      colder. Meanwhile there's that one guy who does almost nothing, and people gravitate toward him
+      anyway. It looks unfair. It looks like he was born that way.</p>
+    <p>He wasn't. <strong>He just stopped auditioning.</strong> Attention, jokes, constant availability
+      all communicate the same thing when overused: I need something from you. The moment she senses
+      that need, the dynamic flips.</p>
+    <blockquote>"You're not here to audition. You're here to see who earns your attention."</blockquote>
+    <p>This guide breaks that pattern down and rebuilds it — not as a trick or a manipulation, but as an
+      internal shift in how you carry yourself around people you're interested in.</p>
+  </section>
+
+  <section class="toc-section">
+    <div class="eyebrow-label mono">Table Of Contents</div>
+    <h2 class="section-head">15 chapters. <em>One</em> way of carrying yourself.</h2>
+    <p class="section-lead">Every chapter builds on the last — read it in order the first time, then keep
+      it as a reference for whenever an old habit creeps back in.</p>
+    <div class="toc-grid">
+      <div>
+        <div class="toc-item"><span class="num">Intro</span><span class="ttl">The Paradox of Trying Too Hard</span></div>
+        <div class="toc-item"><span class="num">01</span><span class="ttl">The Attention Trap — Why Effort Repels</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">Standard Over Approval</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Presence Over Output</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Clean Attention, Not Obsession</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Enjoy Yourself, Stop Chasing Reactions</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Be Willing to Lose Her</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Magnetic Body Language</span></div>
+      </div>
+      <div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Texting Without Neediness</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Ten Mistakes That Kill Attraction</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">The 30-Day Presence Challenge</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">Case Studies</span></div>
+        <div class="toc-item"><span class="num">12</span><span class="ttl">Frequently Asked Questions</span></div>
+        <div class="toc-item"><span class="num">13</span><span class="ttl">Worksheets & Journaling Prompts</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Glossary of Key Terms</span></div>
+        <div class="toc-item"><span class="num">15</span><span class="ttl">The Quick-Reference Cheat Sheet</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beyond dotted">
+    <div class="eyebrow-label mono">Beyond The Reading</div>
+    <h2 class="section-head">Built to <em>practice</em>, not just read once.</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="clabel">Structured</div>
+        <h3>30-Day Challenge</h3>
+        <p>Four weekly focuses — standard, presence, clean attention, detachment — broken into daily actions.</p>
+      </div>
+      <div class="card">
+        <div class="clabel">Hands-On</div>
+        <h3>Worksheets & prompts</h3>
+        <p>Write your own standard, run a weekly presence check, and audit your own attention habits.</p>
+      </div>
+      <div class="card">
+        <div class="clabel">Grounded</div>
+        <h3>Case studies</h3>
+        <p>Three composite stories — the over-texter, the performer, the approval seeker — showing the shifts in practice.</p>
+      </div>
+      <div class="card">
+        <div class="clabel">Direct</div>
+        <h3>FAQ</h3>
+        <p>Honest answers to the doubts this guide usually raises, including "isn't this just playing games?"</p>
+      </div>
+      <div class="card">
+        <div class="clabel">Reference</div>
+        <h3>Glossary</h3>
+        <p>Quick definitions for the core ideas — the audition mindset, clean attention, the attention ledger.</p>
+      </div>
+      <div class="card">
+        <div class="clabel">Pocket-Sized</div>
+        <h3>Cheat sheet</h3>
+        <p>One page to run through before any interaction that matters — before, during, and after.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-ring"><div class="inner-dot"></div></div>
+    <blockquote class="big-quote">"This isn't about becoming cold, manipulative, or emotionally unavailable.
+      It's about becoming a man whose attention is worth something — because it isn't handed out for
+      free, and it isn't chasing a reaction."</blockquote>
+    <div class="quote-cap">Built on self-respect, not manipulation — read the full note inside</div>
+  </section>
+
+  <!-- BUY BUTTON 2 — final CTA, bottom of the page -->
+  <section class="buy-bottom">
+    <div class="buy-card">
+      <div class="badge">Limited-Time Price</div>
+      <div class="product-line">Grab Her Attention</div>
+      <div class="price-row">
+        <span class="was">₹2999</span>
+        <span class="now"><span class="rupee">₹</span>99</span>
+      </div>
+      <div class="save-line">You save ₹2900 — 97% off, today only</div>
+      <button class="full-btn">Buy now — ₹99 →</button>
+      <div class="microcopy">Instant download after payment. No account needed.</div>
+      <div class="checks">
+        <div><span>✓</span>Secure checkout</div>
+        <div><span>✓</span>Instant access</div>
+        <div><span>✓</span>Lifetime access</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">Digital Guides</div>
+    <div class="foot-note">Delivered instantly after purchase. For informational and self-improvement
+      purposes — real change comes from consistent practice, not a single read.</div>
+  </footer>
+
+</body>
+</html>
